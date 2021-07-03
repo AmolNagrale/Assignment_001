@@ -12,18 +12,18 @@
 
 #===================================================================================
 # Example :- 01 
-# def adder(x,y,z):
-#     print("sum:",x+y+z)
-# 
-# adder(10,12,13) # sum:35
+def adder(x,y,z):
+    print("sum:",x+y+z)
+
+adder(10,12,13) # sum:35
 
 
-# # Example :- 02
-# 
-# def adder(x,y,z):
-#     print("sum:",x+y+z)
-# 
-# adder(5,10,15,20,25) # TypeError: adder() takes 3 positional arguments but 5 were given
+# Example :- 02
+
+def adder(x,y,z):
+    print("sum:",x+y+z)
+
+adder(5,10,15,20,25) # TypeError: adder() takes 3 positional arguments but 5 were given
 
 '''Python *args
 
