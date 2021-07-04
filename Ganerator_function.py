@@ -98,34 +98,209 @@
 
 # Demonstrate Python Generator Function
 
-def fibonacci(xterms):
-    # first two terms
-    x1 = 0
-    x2 = 1
-    count = 0
+# def fibonacci(xterms):
+#     # first two terms
+#     x1 = 0
+#     x2 = 1
+#     count = 0
+# 
+#     if xterms <= 0:
+#         print("Please provide a +ve integer")
+#     elif xterms == 1:
+#         print("Fibonacci seq upto",xterms,":")
+#         print(x1)
+#     else:
+#         while count < xterms:
+#             xth = x1 + x2
+#             x1 = x2
+#             x2 = xth
+#             count += 1
+#             yield xth
+# 
+# fib = fibonacci(5)
+# 
+# print(next(fib))
+# print(next(fib))
+# print(next(fib))
+# print(next(fib))
+# print(next(fib))
+# #print(next(fib)) # more than 5th time approche will get error (StopIteration)
 
-    if xterms <= 0:
-        print("Please provide a +ve integer")
-    elif xterms == 1:
-        print("Fibonacci seq upto",xterms,":")
-        print(x1)
-    else:
-        while count < xterms:
-            xth = x1 + x2
-            x1 = x2
-            x2 = xth
-            count += 1
-            yield xth
+#===================================================================================
 
-fib = fibonacci(5)
+# Demonstrate Python Generator Expression
 
-print(next(fib))
-print(next(fib))
-print(next(fib))
-print(next(fib))
-print(next(fib))
-#print(next(fib)) # more than 5th time approche will get error (StopIteration)
+# Define the list
+# alist = [4, 16, 64, 256]
+# 
+# # Find square root using the list comprehension
+# out = [a**(1/2) for a in alist]
+# print(out)
+# 
+# # Use generator expression to calculate the square root
+# out = (a**(1/2) for a in alist)
+# print(out)
+# print(next(out))
+# print(next(out))
+# print(next(out))
+# print(next(out))
+# #print(next(out))
+#      
+#===================================================================================
+
+# Generator next() Method Demo
+#
+# alist = ['Python', 'Java', 'C', 'C++', 'CSharp']
+# def list_items():
+#     for item in alist:
+#         yield item
+# 
+# gen = list_items()
+# 
+# iter = 0
+# 
+# while iter < len(alist):  
+#     print(next(gen))
+#     iter += 1
+#     
+    
+#==================================================================================
+
+# Generator For Loop Demo
+#
+# alist = ['Python', 'Java', 'C', 'C++', 'CSharp']
+# def list_items():
+#     for item in alist:
+#         yield item
+# 
+# gen = list_items()
+# 
+# for item in gen:
+#     print(item)
+
+#==================================================================================
+
+# Python Generator Function with Multiple Yield
+
+# def testGen():
+#     x = 2
+#     print('First yield')
+#     # Generator function has many yield statements
+#     yield x
+# 
+#     x *= 1
+#     print('Second yield')
+#     yield x
+# 
+#     x *= 1
+#     print('Last yield')
+#     yield x
+# 
+# # Call the generator
+# iter = testGen()
+# 
+# # Invoke the first yield
+# next(iter)
+# 
+# # Invoke the second yield
+# next(iter)
+# 
+# # Invoke the last yield
+# next(iter)
+
+#==================================================================
+
+# Generate Arithmetic Progression Using Iterator Class
+# 
+# class AP:
+#     def __init__(self, a1, d, size):
+#         self.ele = a1
+#         self.diff = d
+#         self.len = size
+#         self.count = 0
+# 
+#     def __iter__(self):
+#         return self
+# 
+#     def __next__(self): 
+#         if self.count >= self.len:
+#             raise StopIteration
+#         elif self.count == 0:
+#             self.count += 1
+#             return self.ele
+#         else:
+#             self.count += 1
+#             self.ele += self.diff
+#             return self.ele
+# 
+# for ele in AP(1, 2, 10):
+#     print(ele)
 
 
-     
-     
+# Generate Arithmetic Progression Using Generator Function
+ 
+# def AP(a1, d, size):
+#     count = 1
+#     while count <= size:
+#         yield a1
+#         a1 += d
+#         count += 1
+# 
+# for ele in AP(1, 2, 10):
+#     print(ele)
+
+#===========================================================================
+ # Find All Prime Numbers Using Generator
+# 
+# def find_prime():
+#     num = 1
+#     while True:
+#         if num > 1:
+#             for i in range(2, num):
+#                 if (num % i) == 0:
+#                     break
+#             else:
+#                 yield num
+#         num += 1
+#          # continously generate prime numbers, need to break iteration use 'ctrl+c'
+# for ele in find_prime():
+#     print(ele)
+    
+#==========================================================================
+    
+#Chain Multiple Operations Using Generator Pipeline
+
+def find_prime():
+    num = 1
+    while num < 100:
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    break
+            else:
+                yield num
+        num += 1
+
+def find_odd_prime(seq):
+    for num in seq:
+        if (num % 2) != 0:
+            yield num
+
+a_pipeline = find_odd_prime(find_prime())
+
+for a_ele in a_pipeline:
+    print(a_ele)
+
+'''
+Generators can produce a sequence on the fly and allow us to access one of its
+items whenever we need it. While doing so, it doesn’t consume a lot of memory
+and still gives us the ability to work with infinite streams of data. All in all,
+it is a trickier programming concept and worth trying in projects.
+
+'''
+
+
+
+
+
+
