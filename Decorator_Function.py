@@ -36,3 +36,26 @@ def squaredecor(func):
 def num():
     return 10
 print(num()) # 200 is final o/p.
+
+
+# By changing the seqence of decorator calling
+
+def doubledecor(func):
+    def inner():
+        x = func()
+        return 2*x
+    return inner
+
+def squaredecor(func):
+    def inner():
+        x = func()
+        return x*x
+    return inner
+ 
+@squaredecor # input is return value of doubledecor & final 20*20 = 400
+@doubledecor # input from main function (num), 2*10 = 20
+  
+
+def num():
+    return 10
+print(num()) # 400 is final o/p.

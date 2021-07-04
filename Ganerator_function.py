@@ -267,29 +267,29 @@
 #     print(ele)
     
 #==========================================================================
-    
-#Chain Multiple Operations Using Generator Pipeline
-
-def find_prime():
-    num = 1
-    while num < 100:
-        if num > 1:
-            for i in range(2, num):
-                if (num % i) == 0:
-                    break
-            else:
-                yield num
-        num += 1
-
-def find_odd_prime(seq):
-    for num in seq:
-        if (num % 2) != 0:
-            yield num
-
-a_pipeline = find_odd_prime(find_prime())
-
-for a_ele in a_pipeline:
-    print(a_ele)
+#     
+# #Chain Multiple Operations Using Generator Pipeline
+# 
+# def find_prime():
+#     num = 1
+#     while num < 100:
+#         if num > 1:
+#             for i in range(2, num):
+#                 if (num % i) == 0:
+#                     break
+#             else:
+#                 yield num
+#         num += 1
+# 
+# def find_odd_prime(seq):
+#     for num in seq:
+#         if (num % 2) != 0:
+#             yield num
+# 
+# a_pipeline = find_odd_prime(find_prime())
+# 
+# for a_ele in a_pipeline:
+#     print(a_ele)
 
 '''
 Generators can produce a sequence on the fly and allow us to access one of its
@@ -298,9 +298,26 @@ and still gives us the ability to work with infinite streams of data. All in all
 it is a trickier programming concept and worth trying in projects.
 
 '''
+#=============================================================
 
+def countdown(num):
+    print("Start countdown")
+    while(num>0):
+        yield num
+        num = num - 1
+values = countdown(7)
+#for x in values:
+#    print(x)
+print(next(values))
+print(next(values))
+print(next(values))
+print(next(values))
+print(next(values))
+print(next(values))
+print(next(values))
+#print(next(values)) # stopIteration error occured
 
-
-
-
+l = [x for x in range(5)]
+for x in l:
+    print(x)
 
