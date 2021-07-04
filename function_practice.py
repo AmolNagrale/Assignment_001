@@ -32,10 +32,10 @@
 #     print(l)
 #     
     
-l = [x*x for x in range(10)] 
-for x in l:
-    #print(x) # MemoryError :- dirctly store the data in memory, hence memoryerror will occured.
-    print(l)
+# l = [x*x for x in range(10)] 
+# for x in l:
+#     #print(x) # MemoryError :- dirctly store the data in memory, hence memoryerror will occured.
+#     print(l)
 
 #====================================================================
 
@@ -61,3 +61,23 @@ for x in l:
 #      print("inside func1()")
 #      return a+b
 
+#======================================================================
+
+def decor(func):
+    def inner(name):
+        print("Decorator1 exicuting...")
+        func(name)
+    return inner
+
+def decor1(func):
+    def inner(name):
+        print("Decorator2 executing...")
+        func(name)
+        return inner
+
+
+def wish(name):
+    print("Hello",name,"Good Morning")
+wish("Durga")
+
+ 
