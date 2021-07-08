@@ -237,10 +237,169 @@
 
 #================================================
 
-# Handling Byte data
+# Handling Byte data ==>Image 
 
-f1 = open("Photo.jpg",'rb')
-f2 = open("newpic.jpg",'wb')
-bytes = f1.read()
-f2.write(bytes)
-print("New Image is available with the new name newpic.jpg")
+# f1 = open("Photo.jpg",'rb')
+# f2 = open("newpic.jpg",'wb')
+# bytes = f1.read()
+# f2.write(bytes)
+# print("New Image is available with the new name newpic.jpg")
+
+#================================================
+# Handling byte data ==>video
+
+# f1 = open("Video.mp4",'rb')
+# f2 = open("newvideo.mp4",'wb')
+# bytes = f1.read()
+# f2.write(bytes)
+# print("New Image is available with the new name newpic.jpg")
+# 
+# f1 = open("audio.mp3",'rb')
+# f2 = open("newaudio.mp3",'wb')
+# bytes = f1.read()
+# f2.write(bytes)
+# print("New Image is available with the new name newpic.jpg")
+
+#======================================================
+# Handling csv files
+
+# writting data to csv file
+
+# import csv
+# with open("emp.csv",'w',newline='')as f: # newline ='' use to remove extra spaces in xl
+#     w = csv.writer(f)
+#     w.writerow(["ENO","ENAME","ESAL","EADDR"])
+#     n = int(input("Enter number of emplyee :"))
+#     for i in range(n):
+#         eno = int(input("Enter employee Number :"))
+#         ename = input("Enter Employee Name :")
+#         esal = float(input("Enter Employee Sal :"))
+#         eaddr = input("Enter employee address :")
+#         w.writerow([eno,ename,esal,eaddr])
+#     print("Total Employees data written to csv file successfully !!!!!")
+
+#=============================================================
+# Reading data from csv file
+
+# import csv
+# f = open("emp.csv",'r')
+# r = csv.reader(f)
+# data =list(r)
+# #print(data) # we have get a output in list form
+# #print(type(r))
+# for line in data:
+#     for word in line:
+#         print(word,"\t",end='')
+#     print() # after reading first row will move on next line..
+#     
+#=================================================
+# zipping & unzipping files
+
+# Zipping files
+
+# from zipfile import*
+# f = ZipFile("file2.zip",'w',ZIP_DEFLATED)
+# f.write("cricketers.txt")
+# f.write("heroes.txt")
+# f.write("Friends.txt")
+# f.close()
+# print("files1.zip file created successfully")
+
+# unzipping files
+
+# from zipfile import*
+# f = ZipFile("file2.zip",'r',ZIP_STORED)
+# names = f.namelist()
+# for name in names:
+#     print("File Name :",name)
+#     print("The Content of this file :")
+#     f1=open(name,'r')
+#     print(f1.read())
+#     print()
+# print("files2.unzip files successfully")
+
+#===========================================
+
+# Working with directories :
+
+# 1.current working directories
+
+# import os
+# cwd = os.getcwd
+# print("Current working directory :",cwd)
+
+# 2. create sub directory in current working directories
+# import os
+# os.mkdir("mysub")
+# print("My sub directory create in cwd ")
+
+#3. to create sub/Amol dirctory in mysub
+
+# import os
+# os.mkdir("mysub/Amol")
+# print("mysub2 created inside mysub")
+
+# #4. to create sub/Amol/pythonclass dirctory in mysub
+# 
+# import os
+# os.mkdir("mysub/Amol/pythonclass")
+# print("mysub2 created inside mysub")
+# 
+# #5. to create multiple directories in sub directories 
+
+# import os
+# os.makedirs("sub1/sub2/sub3")
+# print("mysub2 created inside mysub")
+#
+# import os
+# os.removedirs("mysub/Amol/pythonclass")
+# print("mysub2 created inside mysub")
+# 
+
+# import os
+# for dirpath,filenames in os.walk("Downloads"):
+#     print("Current working directory path :",dirpath)
+#     print("Directories :",dirnames)
+#     print("File Names:",filenames)
+# print()
+#
+
+# import os
+# os.system("dir *.py")
+# os.system("py demo.py")
+
+# import os
+# stat = os.stat("abc.txt")
+# print(stat)
+
+# import os
+# from datetime import*
+# stats=os.stat("abc.txt")
+# print("File size in bytes :",stats.st_size)
+# print("File Last access Time :",datetime.fromtimestamp(stats.st_atime))
+# print("File Last Modified Time :",datetime.fromtimestamp(stats.st_mtime))
+
+
+#==========================================================================
+
+# Writing & reading state of objectby using pickle module :
+
+import pickle
+class Employee:
+    def __init__(self,eno,ename,eaddr):
+        self.eno = eno
+        self.ename = ename
+        self.eaddr = eaddr
+    def display(self):
+        print(self.eno,"\t",self.ename,"\t",self.eaddr)
+
+with open("emp.dat","wb") as f:
+    e = Employee(100,'Durga','Hyd')
+    pickle.dump(e,f)
+    print("Pickling of Employee object completed")
+      
+    
+with open("emp.dat","rb") as f:
+    obj=pickle.load(f)
+    print("Employee Information after unpickling")
+    obj.display()
