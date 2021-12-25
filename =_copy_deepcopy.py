@@ -16,7 +16,7 @@ it of the objects found in the original.'''
 # print(list2)
 # print(id(list2))
 # print(list1)
-# print(id(list2))
+# print(id(list1))
 
 # By using copy()/shallow copy
 
@@ -32,11 +32,11 @@ it of the objects found in the original.'''
 
 #shallow copy by using nested list
 
-# list1 = [[1,2,3,4],[5,6,7,8]]
-# list2 = list1.copy()
-# print(list1, list2)
-# list2[1][2]=1000
-# print(list1, list2)
+list1 = [[1,2,3,4],[5,6,7,8]]
+list2 = list1.copy()
+print(list1, list2)
+list2[1][2]=1000
+print(list1, list2)
 
 ''' Whenever i have used nested list that time it has to be changed both
 lists but same senario i have used with single list it has changed on perticular list(list2)'''

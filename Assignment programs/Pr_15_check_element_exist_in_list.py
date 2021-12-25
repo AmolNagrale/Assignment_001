@@ -20,17 +20,14 @@
 #==================================================================
 # second approch using in operator
 
-# mylist = [1,2,3,4,5,6]
-# 
-# ele = 100
-# 
-# if ele in mylist:
-#     print("Element exist on list")
-# else:
-#     print("Element is not exist on list")
-    
-#==================================================================
+mylist = [1,2,3,4,5,6]
 
+ele = 100
+
+if ele in mylist:
+    print("Element exist on list")
+else:
+    print("Element is not exist on list")
 
 
 

@@ -74,15 +74,15 @@
 
 # # frozenset datatype
 # 
-s = {10,20,30,40}
-s = frozenset(s)
-print(type(s))
+# s = {10,20,30,40}
+# s = frozenset(s)
+# print(type(s))
+# 
+# fs = frozenset({10,20,30,40})
+# for i in fs:
+#     print(i)
 
-fs = frozenset({10,20,30,40})
-for i in fs:
-    print(i)
-
-we haven't done any index/slice/append operation in it bcz, it's immutable.
+# we haven't done any index/slice/append operation in it bcz, it's immutable.
 
 ###########################################################################
 
@@ -90,7 +90,7 @@ we haven't done any index/slice/append operation in it bcz, it's immutable.
 
 # d = {"Amol":101, "Amit":102,"Ashish":103}
 # print(d)
-# 
+
 # print(d)
 # print(d["Amol"])
 # print(d[101])
@@ -110,6 +110,6 @@ we haven't done any index/slice/append operation in it bcz, it's immutable.
 #       non_keyword_list.append(item)
 # print("Keywords: " + "\n",str(keyword_list))
 # print("\nNon Keywords: " +"\n", str(non_keyword_list))
-      
+#       
 
 

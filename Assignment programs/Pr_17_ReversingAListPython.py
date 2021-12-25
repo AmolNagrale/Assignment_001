@@ -17,7 +17,6 @@
 # Reversing a list using reverse()
 
 # def Reverse(list):
-
 # 	list.reverse()
 # 	return list
 # 	
@@ -29,15 +28,12 @@
 
 # Reversing a list using slicing technique
 
-# def Reverse(list):
-#     new_list = list[::-1]
-#     return new_list
-#       
-# list = [10, 11, 12, 13, 14, 15]
-# print(Reverse(list))
-
-#==============================================================================
-
+def Reverse(list):
+    new_list = list[::-1]
+    return new_list
+      
+list = [10, 11, 12, 13, 14, 15]
+print(Reverse(list))
 
 
 

@@ -1,12 +1,12 @@
-# Reversed string
-
-# 1.approch by using slicing
-
+# # Reversed string
+# 
+# #1.approch by using slicing
+# 
 # s = "Team brain work is most popular classes"
 # print(s[::-1])
-
-# 2. approche by using reversed() function
-
+# 
+# #2. approche by using reversed() function
+# 
 # s = "Team brain work is most popular classes"
 # 
 # r = reversed(s)
@@ -16,13 +16,15 @@
 # output = ''.join(r)
 # print(output)
 
+
 #==========================================================
 
-# #3. by using while loop
-# str = input("Enter the valid string :")
-# #s = "Amol"
+#3. by using while loop
+#str = input("Enter the valid string :")
+# str = "Amol"
 # output = ''
 # i = len(str)-1
+# #print(i)
 # while i >= 0:
 #     output = output + str[i]
 #     i = i - 1
@@ -40,9 +42,9 @@
 
 #=========================================================
 
-# 5. WAP to reverse internal content of each word
-
-# s = " Durga software solution "
+# # 5. WAP to reverse internal content of each word
+# s = input("Enter the string :")
+# #s = " Durga software solution "
 # l = s.split() # for spliting each words
 # l2 = []       # for storing after append operation
 # for word in l: # for iteration
@@ -116,7 +118,7 @@
 
 #=======================================================================
 
-#WAP for following requirement
+# #WAP for following requirement
 # '''input = a4b3c2    output = aaaabbbcc'''
 # 
 # #s = "A4B3C2"
@@ -130,7 +132,7 @@
 #         output = output + x*d
 # print(output)
 
-# alternate way :- if we want output in sorted way abc.....z 
+#alternate way :- if we want output in sorted way abc.....z 
 
 # s = input("Enter a string as per expectation :")
 # target = ''
@@ -145,14 +147,15 @@
 
 #=========================================================================
 # WAP for sorted output on given string
-
-# s = input("Enter a string as per expectation :")
+#s = 'a1b2c3d4e5f6'
+#s = input("Enter a string as per expectation :")
 # target = ''
 # for ch in s:
 #     if ch.isalpha():
 #         x = ch
 #     else:
 #         d = int(ch)
+#         print(d)
 #         target = target + x*d
 # output = ''.join(sorted(target))
 # print(output)
@@ -181,19 +184,19 @@
 #============================================================================
 
 #WAP for following requirements
-# input = a4k3b2 output = aeknbd
-# s = input("Enter the required string : ")
-# #s = 'a4k3b2'
-# output = ''    # for stornig output
-# for ch in s:    # condition for iteration
-#     if ch.isalpha(): # if charecter is present in output then store into output
-#         output = output+ ch 
-#         x = ch     # to store ch in x for further comparision
-#     else:
-#         d = int(ch)   # typecast ch into int 
-#         newc = chr(ord(x)+d) # to convert unicode of charecter & add with int value & store it in newc
-#         output = output+newc # final value store in output
-# print(output)
+#input = a4k3b2 output = aeknbd
+s = input("Enter the required string : ")
+#s = 'a4k3b2'
+output = ''    # for stornig output
+for ch in s:    # condition for iteration
+    if ch.isalpha(): # if charecter is present in output then store into output
+        output = output+ ch 
+        x = ch     # to store ch in x for further comparision
+    else:
+        d = int(ch)   # typecast ch into int 
+        newc = chr(ord(x)+d) # to convert unicode of charecter & add with int value & store it in newc
+        output = output+newc # final value store in output
+print(output)
 
 #==============================================================================
 

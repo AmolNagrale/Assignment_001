@@ -69,6 +69,52 @@
 #     print(n)
 #     n+=1
 
+#==========================================================
+
+# s = input("Enter some string :")
+# i = 0
+# for x in s:
+#     print("Charecter present at poaitive index :{} and at negative index :{} is {}".format(i,i-len(s),x))
+#     i = i+1
+
+#===========================================================
+
+# l = list(range(0,10,2))
+# print(l)
+# print(type(l))
+
+# l = 'Amol'
+# s = list(l)
+# print(s)
+
+#============================================================
+
+# s = 'Learning python is very easy'
+# l = s.split()
+# print(l)
+# print(type(l))
+
+#============================================================
+
+# n = [1,2,3,4,5,6,7,8,9,0]
+# print(n[2:7:2])
+# print(n[4::2])
+
+#============================================================
+
+def fact(n):
+    if n == 0:
+        result = 1
+    else:
+        result = n*fact(n-1)
+    return result
+
+
+print("The factorial of given number is :",fact(5))
+        
+
+
+
 
 
 
